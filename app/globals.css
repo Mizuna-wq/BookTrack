@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-paper text-ink font-body antialiased transition-colors duration-200;
+  }
+
+  .dark body {
+    @apply bg-ink text-paper;
+  }
+
+  /* Fokus keyboard harus selalu terlihat jelas (aksesibilitas) */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible {
+    outline: 2px solid theme("colors.gold");
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background-color: theme("colors.gold");
+    color: theme("colors.ink");
+  }
+}
+
+@layer components {
+  /* Kartu buku bergaya kartu indeks perpustakaan */
+  .catalog-card {
+    @apply relative flex flex-col overflow-hidden rounded-sm border border-cream
+      bg-white shadow-card transition-transform duration-150
+      hover:-translate-y-0.5 dark:border-ink-soft dark:bg-ink-soft;
+  }
+
+  .eyebrow {
+    @apply font-mono text-[11px] uppercase tracking-[0.14em] text-forest/70
+      dark:text-gold/80;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
