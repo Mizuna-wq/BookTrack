@@ -2,9 +2,9 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 
 export const metadata = {
-  title: "BookTrack — Temukan & simpan buku favoritmu",
+  title: "BookShelf — Temukan & simpan buku favoritmu",
   description:
-    "BookTrack adalah aplikasi sederhana untuk menjelajahi buku populer, mencari judul, dan menyimpan favorit langsung di browser kamu.",
+    "BookShelf adalah aplikasi sederhana untuk menjelajahi buku populer, mencari judul, dan menyimpan favorit langsung di browser kamu.",
 };
 
 // Script kecil ini sengaja diletakkan sebelum React hydrate, supaya
